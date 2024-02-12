@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.compose.rememberNavController
 import com.abadzheva.abadzheva.navigation.SetupNavHost
 import com.abadzheva.abadzheva.ui.theme.AbadzhevaTheme
@@ -17,7 +18,8 @@ class MainActivity : ComponentActivity() {
         setContent {
             AbadzhevaTheme {
                 val navController = rememberNavController()
-                SetupNavHost(navController = navController)
+                val viewModel = hiltViewModel<MainViewModel>()
+                SetupNavHost(navController = navController, viewModel = viewModel)
             }
         }
     }

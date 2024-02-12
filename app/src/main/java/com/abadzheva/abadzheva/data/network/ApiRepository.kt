@@ -4,5 +4,5 @@ import javax.inject.Inject
 
 class ApiRepository @Inject constructor(private val apiService: ApiService) {
 
-    suspend fun getTopMovies() = apiService.getTopMovies()
+    suspend fun getAllMovies() = apiService.getAllMovies()
 }
